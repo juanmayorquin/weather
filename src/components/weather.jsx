@@ -12,7 +12,7 @@ export default function Weather({ icon, temp, min, max, wind, precipitation, hum
             <div className="flex flex-col items-center justify-center">
                 <p className="text-8xl font-light text-black">{temp}</p>
                 <div className="flex items-center justify-center text-center">
-                    <p>{min}/{max}</p>
+                    <p className="text-3xl font-light">{min}/{max}</p>
                 </div>
             </div>
             <div className="flex flex-col items-start">
