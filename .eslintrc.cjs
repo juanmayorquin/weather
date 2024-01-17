@@ -26,6 +26,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    quotes: ["error", "double"]
+    quotes: ["error", "double"],
+    "react/prop-types": "off",
   }
 };
