@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import Typewriter from "typewriter-effect";
 import { useSearchParams } from "react-router-dom";
 
-export default function Searcher() {
+export default function Searcher({currentLocationName}) {
   const [writing, setWriting] = useState(false);
   const searcherRef = useRef(null);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -41,7 +41,6 @@ export default function Searcher() {
       document.removeEventListener("keydown", handleEnter);
     };
   }, [writing]);
-  
   return (
     <>
       {writing ? (
@@ -49,7 +48,7 @@ export default function Searcher() {
           ref={searcherRef}
           type="text"
           className="bg-transparent focus:outline-none w-40 focus:border-none px-5 searcher text-center"
-          placeholder={searchParams.get("city") || "New York"}
+          placeholder={searchParams.get("city") || currentLocationName}
           id="searcher"
         />
       ) : (
@@ -60,7 +59,7 @@ export default function Searcher() {
           <Typewriter
             component={"span"}
             options={{
-              strings: [searchParams.get("city") || "New York"],
+              strings: [searchParams.get("city") || currentLocationName],
               autoStart: true,
               loop: true
             }}
