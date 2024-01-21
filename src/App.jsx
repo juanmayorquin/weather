@@ -1,7 +1,6 @@
 import Weather from "./components/weather";
 import Forecast from "./components/forecast";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Toaster, toast } from "sonner";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { LocationMarker } from "./location-marker";
@@ -76,7 +75,7 @@ function App() {
           zoom={13}
           minZoom={4}
           inertia={true}
-          
+
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
