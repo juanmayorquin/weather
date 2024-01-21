@@ -21,7 +21,7 @@ function App() {
             const lng = position.coords.longitude;
 
             const response = await fetch(
-              `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${import.meta.env.VITE_API_KEY}`
+              `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${import.meta.env.VITE_API_KEY}`
             );
             const data = await response.json();
 
@@ -43,7 +43,7 @@ function App() {
         const lng = currentLocation[1];
 
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${import.meta.env.VITE_API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${import.meta.env.VITE_API_KEY}`
         );
         const data = await response.json();
         console.log(data);
